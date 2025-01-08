@@ -3,27 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class CourseController extends Controller
 {
-    public function index(): View
+    public function index(Request $request): View
     {
-//        $courses = DB::select('select * from courses');
-//        $courses = DB::table("courses")->get();
 
-        $courses = Course::latest()->paginate(4);
+        $courses = Course::latest()
+            ->whereLike(['title', 'description'], "%{$request->search}%")
+            ->paginate(4)
+            ->withQueryString();
 
         return view('pages.courses.index', compact('courses'));
     }
 
     public function show(Course $course): View
     {
-//        $course = DB::selectOne('select * from courses where id = :id', compact('id'));
-//        $course = DB::table('courses')->where('id', $id)->first();
-//        $course = DB::table('courses')->find($id);
-//        $course = Course::find($id);
-
         return view('pages.courses.show', compact('course'));
     }
 }

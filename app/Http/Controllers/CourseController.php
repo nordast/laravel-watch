@@ -12,7 +12,7 @@ class CourseController extends Controller
 //        $courses = DB::select('select * from courses');
 //        $courses = DB::table("courses")->get();
 
-        $courses = Course::paginate(4);
+        $courses = Course::latest()->paginate(4);
 
         return view('pages.courses.index', compact('courses'));
     }

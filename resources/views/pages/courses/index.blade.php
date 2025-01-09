@@ -5,12 +5,12 @@
                 Courses
             </h2>
 
-            <x-course-search />
+            <x-course.search />
 
             <div class="grid grid-cols-2 gap-4">
 
                 @foreach($courses as $course)
-                    <x-course :$course />
+                    <x-course.card :$course />
                 @endforeach
 
             </div>

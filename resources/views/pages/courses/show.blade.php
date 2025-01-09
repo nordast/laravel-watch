@@ -5,7 +5,7 @@
 
             <div class="flex gap-6">
                 <x-course.info :$course />
-                <x-course.lessons />
+                <x-course.lessons :lessons="$course->lessons" />
             </div>
         </div>
     </section>

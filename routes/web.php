@@ -15,7 +15,7 @@ Route::controller(CourseController::class)
         Route::get('/{course}', 'show')->name('show');
     });
 
-Route::get('/lessons/{lesson}', LessonController::class)->name('lessons.show');
+Route::get('/lessons/{lesson}', [LessonController::class, 'show'])->name('lessons.show');
 
 
 Route::view('/contact', 'pages.contact')->name('contact');

@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('title')->default('Course');
             $table->text('description')->nullable();
-            $table->string('length')->default('00h 00m');
             $table->timestamps();
         });
     }

@@ -20,6 +20,7 @@ return new class extends Migration
 
             $table->unsignedSmallInteger('number');
             $table->string('title');
+            $table->unsignedSmallInteger('length');
             $table->timestamps();
         });
     }

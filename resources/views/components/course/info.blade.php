@@ -9,7 +9,7 @@
         <p>{{ $course->description }}</p>
 
         <footer class="flex gap-2">
-            <a href="{{ route('lessons.show', $course->firstLesson) }}" class="grow text-center whitespace-nowrap rounded-md font-semibold px-4 py-2 bg-violet-500 text-white hover:bg-violet-600">
+            <a href="{{ $course->firstLesson->routeUrl }}" class="grow text-center whitespace-nowrap rounded-md font-semibold px-4 py-2 bg-violet-500 text-white hover:bg-violet-600">
                 Start Watch
             </a>
             <a href="#" class="grow text-center whitespace-nowrap rounded-md font-semibold px-4 py-2 bg-gray-100  hover:bg-gray-200">
